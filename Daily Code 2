@@ -1,0 +1,19 @@
+#Given an array of integers, return a new array such that:
+#Each element at index [i] of the new array is the product of all the numbers in the original array except the one at [i]
+#For example: input of [3, 2, 1] would be [2, 3, 6]
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5])
+i = 0
+result = []
+
+while (i < len(arr)):
+    mult_arr = np.delete(arr, i, 0)
+    product = np.prod(mult_arr)
+    result.append(product)
+    i += 1
+
+result = np.array(result)
+
+print(result)
